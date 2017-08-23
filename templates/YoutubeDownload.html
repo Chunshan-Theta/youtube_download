@@ -1,0 +1,37 @@
+<!-- hello_world.html -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DownloadYoutubeAPI</title>
+        <style>
+            body {
+               background-color: lightyellow;
+            }
+            em {
+                color: LightSeaGreen;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Hello!</h1>
+        調整網址來搜索各種的youtube影片吧!<br>
+        網址調整方式：<br>
+        http://...../YoutubeDownload/ + youtubeID<br>
+        如:http://...../YoutubeDownload/znbKTbDGX1E<br><br>
+        
+        那怎麼知道個影片的youtubeID?<br>
+        以 https://www.youtube.com/watch?v=znbKTbDGX1E 這個影片為例<br>
+        這個影片的youtubeID為 znbKTbDGX1E ，也就是v=後面所接的文字<br>
+        那如果網址是長得如同 https://www.youtube.com/watch?v=znbKTbDGX1E&list=RDznbKTbDGX1E#t=191 呢？<br>
+        那ID只要擷取v=後面且在＆前方的文字，也就是znbKTbDGX1E。<br><br>
+        
+        
+        
+        
+        {% for link in SourceUrl %}
+            <li><a href="{{ link.url }}" download="filemane.mp4">{{ link.info }}</a></li>
+
+        {% endfor %}
+    </body>
+</html>
