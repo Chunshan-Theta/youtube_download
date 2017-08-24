@@ -2,7 +2,6 @@
 from __future__ import unicode_literals
 from datetime import datetime
 from django.shortcuts import render
-from .models import Post as DB_Main_list
 from DownloadYoutubeAPI import detect as DYA
 ###### show view ######
 
@@ -22,9 +21,9 @@ def GetDataPage(request,Get_1,Get_2):
     return render(request,template,responds)
 
 def YoutubeDownload(request,Url = 'znbKTbDGX1E'):
-    Url = 'https://www.youtube.com/watch?v='+str(Url.encode('utf-8'))
+    Url_complete = 'https://www.youtube.com/watch?v='+str(Url.encode('utf-8'))
     template = 'YoutubeDownload.html'
-    responds = {'SourceUrl': DYA(Url),'current_time': str(datetime.now().strftime("%d/%m - %H%M%S")),}
+    responds = {'SourceUrl': DYA(Url_complete),'current_time': str(datetime.now().strftime("%d/%m - %H%M%S")),'VideoID':Url}
     return render(request,template,responds)
 ###### show view END######
 
