@@ -20,7 +20,7 @@ from APP1.views import YoutubeDownload
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^YoutubeDownload/(?P<Url>\w*)/$', YoutubeDownload),
+    url(r'^YoutubeDownload/(?P<Url>\S*)/$', YoutubeDownload),
     url(r'^YoutubeDownload/$', YoutubeDownload),
     url(r'^hi/', hello_world),
 ]
