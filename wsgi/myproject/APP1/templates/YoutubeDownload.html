@@ -43,13 +43,26 @@
     function changeSrc()
     {
         var inputURL = document.getElementById("inputURL").value;
-    
-        inputURL = inputURL.substring(inputURL.indexOf("v=")+2,inputURL.indexOf("v=")+13);
+        var inputURL_TureOrNot = inputURL.indexOf("v=")
+        if (inputURL_TureOrNot != -1)
+        {
+            inputURL = inputURL.substring(inputURL.indexOf("v=")+2,inputURL.indexOf("v=")+13);
+        }
+        else if (inputURL.length == 11)
+        {
+            
+        }
+        else
+        {
+            //  https://youtu.be/V7iWGcyNcqo
+            inputURL = inputURL.substring(inputURL.indexOf("youtu.be")+9,inputURL.indexOf("youtu.be")+20);
+        }
         var curWwwPath=window.document.location.href;
         var pathName=window.document.location.pathname;
         var pos=curWwwPath.indexOf(pathName);
         var localhostPaht=curWwwPath.substring(0,pos);
         location.href = localhostPaht+'/YoutubeDownload/'+inputURL;
+       
     
     }
     </script>
